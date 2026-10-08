@@ -259,6 +259,11 @@ details[open]>summary::after{transform:translateY(2px) rotate(-135deg)}
 .filebox{flex-direction:column;align-items:stretch;gap:8px}
 .filebtn{display:flex;justify-content:center;width:100%;text-align:center}
 .filebox #cv-chosen{position:relative;z-index:2;margin:0;padding:2px 6px 4px}
+/* round 6 (55-gatekeeper-lp-final.md): line spacing 1.5 on body text, thank-you headline breaks after the first word */
+.seeklist li,.thanks .t-body,.thanks .t-mock,.gridbottom .credit,.foot p,.foot small,.hero-sub,.hero-about,.role p,.dbody li,.hint,.privacy,.mock-note,.err,.req-note,#cv-chosen{line-height:1.5!important}
+.thanks h1{max-width:none;font-size:min(36px,9.2vw)}
+.thanks h1 span{display:block}
+@media (min-width:1000px){.thanks h1{font-size:60px}}
 /* critique fixes A2, A3, A4, A6, A8 (53-impeccable-lp-round3.md) */
 .role .btn{justify-self:stretch;width:100%}
 .why-list li{text-wrap:balance}
@@ -301,7 +306,7 @@ details>summary{text-decoration:underline;text-underline-offset:.25em}
       <div class="field wide"><label for="f-cv">קורות חיים <small>(חובה)</small></label><div class="filebox"><input id="f-cv" name="cv" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required aria-describedby="f-cv-hint f-cv-err"><span class="filebtn" aria-hidden="true">בחירת קובץ</span><p id="cv-chosen" hidden><span>הקובץ שנבחר:</span> <span class="cv-name"></span><button type="button">הסרת הקובץ</button></p></div><p class="hint" id="f-cv-hint">קובץ אחד, PDF או Word, עד 5MB. אין צורך במספר תעודת זהות, בתאריך לידה או בתמונה.</p><span class="err" id="f-cv-err" role="alert"></span></div>
     </div>
     <p class="privacy">מסירת הפרטים וקורות החיים היא מרצון. הם ישמשו את מרכז קהילתי דרור לבחינת המועמדות למשרות במרכז בלבד.</p>
-    <noscript><p class="mock-note">כדי להגיש את הטופס יש להפעיל JavaScript בדפדפן.</p></noscript>
+    <noscript><p class="mock-note">כדי לשלוח את הטופס יש להפעיל JavaScript בדפדפן.</p></noscript>
     <p class="err" id="form-status" role="alert"></p>
     <button class="btn" type="submit" disabled>לשליחת קורות חיים</button>
     <p class="mock-note">זוהי הדמיה לאישור העמוד. הטופס אינו שולח ואינו שומר פרטים.</p>
@@ -323,7 +328,7 @@ details>summary{text-decoration:underline;text-underline-offset:.25em}
 </main>
 <footer class="foot"><div class="wrap"><p><strong>מרכז קהילתי דרור · דרום תל אביב-יפו</strong></p><p class="foot-links"><a href="https://www.tel-aviv.gov.il/About/Pages/PrivacyStatement.aspx" target="_blank" rel="noopener">מדיניות הפרטיות של עיריית תל אביב-יפו <span class="vh">(נפתח בלשונית חדשה)</span></a><a href="https://www.tel-aviv.gov.il/Transparency/Pages/AccessibilityStatement.aspx" target="_blank" rel="noopener">הצהרת הנגישות של עיריית תל אביב-יפו <span class="vh">(נפתח בלשונית חדשה)</span></a></p><small class="ph">הקישורים מובילים לאתר העירייה. הצהרת נגישות ומדיניות פרטיות לעמוד זה יושלמו מול המרכז.</small><small>המשרות מיועדות לנשים ולגברים כאחד.</small><small>התמונות בעמוד הן אילוסטרציה.</small></div><div class="gridbottom"><p class="credit">מנהל קהילה, תרבות וספורט | מרכז קהילתי דרור</p></div></footer>
 <div class="stickybar"><a class="btn" href="#apply-wrap">לשליחת קורות חיים</a></div>
-<script type="application/json" id="strings">{"errRequired": "השדה חסר. יש למלא אותו כדי להגיש.", "errFirst": "חסר שם פרטי.", "errLast": "חסר שם משפחה.", "errPhoneMissing": "חסר מספר טלפון.", "errEmailMissing": "חסרה כתובת מייל.", "errRole": "לא נבחר תחום. יש לבחור תחום מהרשימה.", "errCv": "לא צורף קובץ קורות חיים. אפשר לצרף קובץ PDF או Word.", "errEmail": "כתובת המייל אינה תקינה. דוגמה: name@example.com", "errPhone": "מספר הטלפון אינו תקין. דוגמה: 050-1234567", "errSize": "הקובץ גדול מ-5MB. אפשר לצרף קובץ PDF או Word קטן יותר.", "errType": "סוג הקובץ אינו נתמך. אפשר לצרף קובץ PDF או Word בלבד.", "errSend": "השליחה לא הצליחה. הפרטים נשמרו בטופס, אפשר לנסות שוב.", "sending": "שולחים את קורות החיים..."}</script>
+<script type="application/json" id="strings">{"errRequired": "שדה חובה. יש למלא אותו כדי לשלוח.", "errFirst": "חסר שם פרטי.", "errLast": "חסר שם משפחה.", "errPhoneMissing": "חסר מספר טלפון.", "errEmailMissing": "חסרה כתובת מייל.", "errRole": "לא נבחר תחום. יש לבחור תחום מהרשימה.", "errCv": "לא צורף קובץ קורות חיים. אפשר לצרף קובץ PDF או Word.", "errEmail": "כתובת המייל אינה תקינה. דוגמה: name@example.com", "errPhone": "מספר הטלפון אינו תקין. דוגמה: 050-1234567", "errSize": "הקובץ גדול מ-5MB. אפשר לצרף קובץ PDF או Word קטן יותר.", "errType": "סוג הקובץ אינו נתמך. אפשר לצרף קובץ PDF או Word בלבד.", "errSend": "השליחה לא הצליחה. הפרטים נשארו בטופס, אפשר לנסות שוב.", "sending": "שולחים את קורות החיים..."}</script>
 <script>
 (function () {
   var form = document.getElementById('apply');
