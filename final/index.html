@@ -264,6 +264,9 @@ details[open]>summary::after{transform:translateY(2px) rotate(-135deg)}
 .thanks h1{max-width:none;font-size:min(36px,9.2vw)}
 .thanks h1 span{display:block}
 @media (min-width:1000px){.thanks h1{font-size:60px}}
+/* round 7: phone bar hidden state */
+.stickybar{transition:transform .25s cubic-bezier(.16,1,.3,1),opacity .2s,visibility 0s}
+.stickybar.is-hidden{transform:translateY(110%);opacity:0;visibility:hidden;pointer-events:none;transition:transform .25s cubic-bezier(.16,1,.3,1),opacity .2s,visibility 0s .25s}
 /* critique fixes A2, A3, A4, A6, A8 (53-impeccable-lp-round3.md) */
 .role .btn{justify-self:stretch;width:100%}
 .why-list li{text-wrap:balance}
@@ -303,7 +306,7 @@ details>summary{text-decoration:underline;text-underline-offset:.25em}
       <div class="field"><label for="f-phone">טלפון <small>(חובה)</small></label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" required aria-describedby="f-phone-err"><span class="err" id="f-phone-err" role="alert"></span></div>
       <div class="field"><label for="f-email">מייל <small>(חובה)</small></label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" dir="ltr" required aria-describedby="f-email-err"><span class="err" id="f-email-err" role="alert"></span></div>
       <div class="field wide"><label for="f-role">תחום מבוקש <small>(חובה)</small></label><select id="f-role" name="role" required aria-describedby="f-role-err"><option value="" disabled selected>בחירת תחום</option><option value="r1">רכז/ת נוער</option><option value="r2">רכז/ת ילדים</option><option value="r3">מדריכים/ות לילדים ונוער</option></select><span class="err" id="f-role-err" role="alert"></span></div>
-      <div class="field wide"><label for="f-cv">קורות חיים <small>(חובה)</small></label><div class="filebox"><input id="f-cv" name="cv" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required aria-describedby="f-cv-hint f-cv-err"><span class="filebtn" aria-hidden="true">בחירת קובץ</span><p id="cv-chosen" hidden><span>הקובץ שנבחר:</span> <span class="cv-name"></span><button type="button">הסרת הקובץ</button></p></div><p class="hint" id="f-cv-hint">קובץ אחד, PDF או Word, עד 5MB. אין צורך במספר תעודת זהות, בתאריך לידה או בתמונה.</p><span class="err" id="f-cv-err" role="alert"></span></div>
+      <div class="field wide"><label for="f-cv">קורות חיים <small>(חובה)</small></label><div class="filebox"><input id="f-cv" name="cv" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required aria-describedby="f-cv-hint f-cv-err"><span class="filebtn" aria-hidden="true">בחירת קובץ</span><p id="cv-chosen" hidden><span>הקובץ שנבחר:</span> <span class="cv-name"></span><button type="button">הסרת הקובץ</button></p></div><p class="hint" id="f-cv-hint">קובץ אחד, PDF או Word, עד 5MB.</p><span class="err" id="f-cv-err" role="alert"></span></div>
     </div>
     <p class="privacy">מסירת הפרטים וקורות החיים היא מרצון. הם ישמשו את מרכז קהילתי דרור לבחינת המועמדות למשרות במרכז בלבד.</p>
     <noscript><p class="mock-note">כדי לשלוח את הטופס יש להפעיל JavaScript בדפדפן.</p></noscript>
@@ -326,8 +329,8 @@ details>summary{text-decoration:underline;text-underline-offset:.25em}
   <article class="role" data-job="r1"><div class="role-head"><h3>דרוש/ה רכז/ת נוער</h3></div><p class="open">אנחנו מגייסים אשת או איש חינוך שמאמינים בבני נוער, יודעים לראות את הפוטנציאל שבהם ורוצים ללוות אותם בדרך לגיבוש זהות, תחושת שייכות ותמונת עתיד.</p><p class="open">התפקיד כולל הובלת פעילות הנוער במרכז קהילתי דרור, הפועל עם קהילת מבקשי המקלט וחסרי המעמד בדרום תל אביב-יפו, כחלק מרשת מנ&quot;ש (מרחבי נוער שכונתיים) העירונית.</p><p class="facts"><span>היקף המשרה: משרה מלאה, הכוללת עבודה בשעות אחר הצהריים והערב.</span><span>מיקום: דרום תל אביב-יפו.</span></p><details><summary aria-expanded="false">פרטי המשרה<span class="vh">: רכז או רכזת נוער</span></summary><div class="dbody"><h4>תיאור התפקיד:</h4><ul><li>הובלת פעילות חינוכית וחברתית לבני נוער מקהילת מבקשי המקלט וחסרי המעמד.</li><li>ריכוז והפעלת מרחב הנוער כחלק מרשת מנ&quot;ש העירונית, תוך שיתוף פעולה עם גורמים מקצועיים ברשת.</li><li>יצירת קשר אישי, רציף ומשמעותי עם בני הנוער.</li><li>פיתוח והובלת קבוצות, יוזמות ותוכניות מנהיגות.</li><li>ליווי והדרכת צוות מדריכים.</li><li>עבודה חינוכית במרכז הקהילתי ובמרחב הציבורי.</li><li>עבודה בשיתוף עם בתי ספר וגורמים מקצועיים בקהילה.</li></ul><h4>דרישות התפקיד:</h4><ul><li>ניסיון משמעותי בעבודה עם בני נוער - חובה.</li><li>ניסיון בהובלת קבוצות או צוותים - יתרון.</li><li>יכולת יצירת קשר, הכלה והצבת גבולות.</li><li>עצמאות, יוזמה, יצירתיות ומחויבות חברתית.</li><li>יכולת עבודה בשותפויות ובמערכת עירונית רחבה.</li></ul></div></details><p class="close">זו ההזדמנות להיות דמות משמעותית בחייהם של בני נוער, להוביל עשייה חינוכית ייחודית ולהיות חלק מרשת עירונית מקצועית ומשפיעה.</p><a class="btn" href="#apply-wrap" data-role="r1" aria-label="לשליחת קורות חיים למשרת רכז או רכזת נוער">לשליחת קורות חיים</a></article><article class="role" data-job="r2"><div class="role-head"><h3>דרוש/ה רכז/ת ילדים</h3></div><p class="open">רוצה להוביל עשייה חינוכית משמעותית וליצור שינוי אמיתי בחייהם של ילדים?</p><p class="open">מרכז קהילתי דרור, הפועל עם קהילת מבקשי המקלט וחסרי המעמד בדרום תל אביב-יפו, מגייס רכז/ת ילדים עם יוזמה, יצירתיות, יכולת הובלה ואהבה גדולה לחינוך.</p><p class="facts"><span>היקף המשרה: משרה מלאה, הכוללת עבודה בשעות אחר הצהריים.</span><span>מיקום: דרום תל אביב-יפו.</span></p><details><summary aria-expanded="false">פרטי המשרה<span class="vh">: רכז או רכזת ילדים</span></summary><div class="dbody"><h4>תיאור התפקיד:</h4><ul><li>תכנון, ריכוז והובלת פעילות חינוכית בלתי פורמלית לילדים.</li><li>ליווי מקצועי והדרכת צוות מדריכים.</li><li>יצירת קשר משמעותי עם ילדים, הורים וגורמים בקהילה.</li><li>פיתוח מענים חינוכיים מותאמים לצורכי הילדים.</li><li>הובלת פרויקטים, אירועים ופעילויות קהילתיות.</li></ul><h4>דרישות התפקיד:</h4><ul><li>ניסיון בעבודה חינוכית עם ילדים - חובה.</li><li>ניסיון בריכוז פעילות או בהובלת צוות - יתרון.</li><li>יכולת ארגון, יוזמה ועבודה עצמאית.</li><li>רגישות תרבותית, יחסי אנוש מצוינים ותפיסה חברתית.</li></ul></div></details><p class="close">בואו להיות חלק מצוות שמאמין בכוחו של חינוך לשנות מציאות!</p><a class="btn" href="#apply-wrap" data-role="r2" aria-label="לשליחת קורות חיים למשרת רכז או רכזת ילדים">לשליחת קורות חיים</a></article><article class="role" data-job="r3"><div class="role-head"><h3>דרושים/ות מדריכים/ות לילדים ונוער</h3></div><p class="open">אוהבים לעבוד עם ילדים ובני נוער? יצירתיים? מחפשים עבודה עם משמעות אמיתית?</p><p class="open">מרכז קהילתי דרור מגייס מדריכים ומדריכות עם ניצוץ בעיניים, אהבה לחינוך ורצון להיות חלק מעשייה חברתית משמעותית עם ילדים ובני נוער מקהילת מבקשי המקלט וחסרי המעמד.</p><p class="facts"><span>היקף המשרה: משרה חלקית, הכוללת עבודה בשעות אחר הצהריים והערב. מתאימה גם לסטודנטים/ות.</span><span>מיקום: דרום תל אביב-יפו.</span></p><details><summary aria-expanded="false">פרטי המשרה<span class="vh">: מדריכים ומדריכות לילדים ונוער</span></summary><div class="dbody"><h4>תיאור התפקיד:</h4><ul><li>הובלת פעילויות חברתיות, חווייתיות וחינוכיות.</li><li>יצירת קשר אישי ומשמעותי עם ילדים ובני נוער.</li><li>חיזוק תחושת הביטחון, השייכות והמסוגלות.</li><li>השתתפות בתכנון ובהובלת אירועים ופרויקטים.</li><li>עבודה כחלק מצוות חינוכי מקצועי ותומך, במרכז הקהילתי ובמרחב הציבורי.</li></ul><h4>דרישות התפקיד:</h4><ul><li>אהבה גדולה לילדים ולנוער ואמונה ביכולות שלהם.</li><li>אחריות, יצירתיות ויכולת עבודה בצוות.</li><li>ניסיון בהדרכה - יתרון.</li><li>רגישות חברתית ותרבותית.</li><li>רצון ללמוד, להתפתח ולהשפיע.</li></ul></div></details><p class="close">בואו להיות חלק מצוות שמאמין שכל ילד וילדה, נער ונערה, ראויים למקום בטוח, לתחושת שייכות ולהזדמנות אמיתית לעתיד טוב יותר!</p><a class="btn" href="#apply-wrap" data-role="r3" aria-label="לשליחת קורות חיים למשרת מדריכים ומדריכות לילדים ונוער">לשליחת קורות חיים</a></article>
 </div></section>
 </main>
-<footer class="foot"><div class="wrap"><p><strong>מרכז קהילתי דרור · דרום תל אביב-יפו</strong></p><p class="foot-links"><a href="https://www.tel-aviv.gov.il/About/Pages/PrivacyStatement.aspx" target="_blank" rel="noopener">מדיניות הפרטיות של עיריית תל אביב-יפו <span class="vh">(נפתח בלשונית חדשה)</span></a><a href="https://www.tel-aviv.gov.il/Transparency/Pages/AccessibilityStatement.aspx" target="_blank" rel="noopener">הצהרת הנגישות של עיריית תל אביב-יפו <span class="vh">(נפתח בלשונית חדשה)</span></a></p><small class="ph">הקישורים מובילים לאתר העירייה. הצהרת נגישות ומדיניות פרטיות לעמוד זה יושלמו מול המרכז.</small><small>המשרות מיועדות לנשים ולגברים כאחד.</small><small>התמונות בעמוד הן אילוסטרציה.</small></div><div class="gridbottom"><p class="credit">מנהל קהילה, תרבות וספורט | מרכז קהילתי דרור</p></div></footer>
-<div class="stickybar"><a class="btn" href="#apply-wrap">לשליחת קורות חיים</a></div>
+<footer class="foot"><div class="wrap"><p><strong>מרכז קהילתי דרור · דרום תל אביב-יפו</strong></p><p class="foot-links"><a href="https://www.tel-aviv.gov.il/About/Pages/PrivacyStatement.aspx" target="_blank" rel="noopener">מדיניות הפרטיות של עיריית תל אביב-יפו <span class="vh">(נפתח בלשונית חדשה)</span></a><a href="https://www.tel-aviv.gov.il/Transparency/Pages/AccessibilityStatement.aspx" target="_blank" rel="noopener">הצהרת הנגישות של עיריית תל אביב-יפו <span class="vh">(נפתח בלשונית חדשה)</span></a></p><small>המשרות מיועדות לנשים ולגברים כאחד.</small><small>התמונות בעמוד הן אילוסטרציה.</small></div><div class="gridbottom"><p class="credit">מנהל קהילה, תרבות וספורט | מרכז קהילתי דרור</p></div></footer>
+<div class="stickybar is-hidden" aria-hidden="true"><a class="btn" href="#apply-wrap" tabindex="-1">לשליחת קורות חיים</a></div>
 <script type="application/json" id="strings">{"errRequired": "שדה חובה. יש למלא אותו כדי לשלוח.", "errFirst": "חסר שם פרטי.", "errLast": "חסר שם משפחה.", "errPhoneMissing": "חסר מספר טלפון.", "errEmailMissing": "חסרה כתובת מייל.", "errRole": "לא נבחר תחום. יש לבחור תחום מהרשימה.", "errCv": "לא צורף קובץ קורות חיים. אפשר לצרף קובץ PDF או Word.", "errEmail": "כתובת המייל אינה תקינה. דוגמה: name@example.com", "errPhone": "מספר הטלפון אינו תקין. דוגמה: 050-1234567", "errSize": "הקובץ גדול מ-5MB. אפשר לצרף קובץ PDF או Word קטן יותר.", "errType": "סוג הקובץ אינו נתמך. אפשר לצרף קובץ PDF או Word בלבד.", "errSend": "השליחה לא הצליחה. הפרטים נשארו בטופס, אפשר לנסות שוב.", "sending": "שולחים את קורות החיים..."}</script>
 <script>
 (function () {
@@ -439,12 +442,25 @@ details>summary{text-decoration:underline;text-underline-offset:.25em}
     }, 1200);
   });
 
-  // Phone bar: hide while the form is on screen.
+  // Phone bar: visible only when nothing else that leads to the form is on screen.
   var bar = document.querySelector('.stickybar');
   if (bar && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (en) {
-      bar.classList.toggle('is-hidden', en[0].isIntersecting);
-    }, { threshold: 0.15 }).observe(document.getElementById('apply-wrap'));
+    var barLink = bar.querySelector('a');
+    var seen = new Map();
+    var setBar = function (show) {
+      bar.classList.toggle('is-hidden', !show);
+      bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+      if (show) barLink.removeAttribute('tabindex'); else barLink.setAttribute('tabindex', '-1');
+    };
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var need = Math.min(60, e.boundingClientRect.height * 0.6);
+        seen.set(e.target, e.isIntersecting && e.intersectionRect.height >= need);
+      });
+      var any = false; seen.forEach(function (v) { if (v) any = true; });
+      setBar(!any);
+    }, { threshold: [0, 0.02, 0.05, 0.1, 0.2, 0.4, 0.6, 0.8, 1] });
+    document.querySelectorAll('.hero-text .btn, .role .btn, #apply-wrap, footer.foot').forEach(function (el) { seen.set(el, true); io.observe(el); });
   }
 })();
 
